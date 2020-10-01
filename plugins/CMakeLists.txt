@@ -6,7 +6,7 @@ SET(
 		chain_plugin
 )
 
-IF ( NOT MACOSX )
+#IF ( NOT MACOSX )
 	SET(
 		_DIR_LIST 
 			${_DIR_LIST}
@@ -27,7 +27,7 @@ IF ( NOT MACOSX )
 			wave24_plugin
 			win_plugin
 	) 
-ENDIF ( NOT MACOSX )
+#ENDIF ( NOT MACOSX )
 
 SET(SEEDLINK_PLUGIN_OUTPUT_DIR ${SC3_PACKAGE_SHARE_DIR}/plugins/seedlink)
 
