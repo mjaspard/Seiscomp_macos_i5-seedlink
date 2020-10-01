@@ -35,6 +35,10 @@ Revised  :
 #include "platform.h"
 #include "mstime.h"
 
+// Function declarations to avoid implicit function errors when compiling
+// A. Oth, 2020-09-24 to compile on macOS with XCode 12
+void util_tsplit();
+
 /* Macros ------------------------------------------------------------- */
 /* floor(x/y), where x, y>0 are integers, using integer arithmetic */
 #define QFLOOR( x, y ) ((x) > 0 ? (x) / (y) : -(((y) - 1 - (x)) / (y)))
