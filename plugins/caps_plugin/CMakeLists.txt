@@ -29,6 +29,12 @@ ADD_EXECUTABLE(caps_plugin ${CAPSPLUGIN_SOURCES})
 FIND_PACKAGE(OpenSSL REQUIRED)
 FIND_PACKAGE(Boost REQUIRED COMPONENTS system program_options)
 
+# On MacOS we need to include OpenSSL include-dirs after FIND_PACKAGE
+# and possiby include dirs of Boost too
+IF(MACOSX)
+    INCLUDE_DIRECTORIES(${OPENSSL_INCLUDE_DIR})
+ENDIF(MACOSX)
+
 TARGET_LINK_LIBRARIES(
 	caps_plugin
 		slink
